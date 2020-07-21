@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Home</title>
+</head>
+<body>
+    <form action="/students" method="POST" autocomplete ="off" >
+        <label for="id" id="lblID">ID : </label>
+        <input type="text" name="txtID" id="txtID"><br>
+        <label for="fullName" id="lblFullName">FullName : </label>
+        <input type="text" name="txtFullName" id="txtFullName"><br>
+        <button type="submit">SUBMIT</button>
+
+    </form>
+    
+
+    <thead>
+        <th>
+            <tr>
+                <th>ID</th>
+                <th>FULLNAME</th><br>
+            </tr>
+        </th>
+    </thead>
+    <tbody>
+        <tr>
+            <% for(var iterator = 0 ; iterator < data.length ; iterator++){ %>
+                <td><%= data[iterator].id %></td>
+                <td><%= data[iterator].fullName %></td>
+                <a href="/students/delete/<%= data[iterator].id %>">DELETE</a>
+                <a href="/students/update/<%= data[iterator].id %>">UPDATE</a>
+                <br>
+            <% } %>
+        </tr>
+    </tbody>
+</body>
+</html>

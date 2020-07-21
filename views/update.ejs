@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>UPDATE</title>
+</head>
+<body>
+    <form action="/students/update" method="POST" autocomplete="off">
+        <input type="hidden" name="txtID" id="id" value="<%= data[0].id %>">
+        <label for="fullName">FullName : </label>
+        <input type="text" name="txtFullName" id="txtFullName" placeholder="<%= data[0].fullName %>">
+        <br>
+        <button type="submit">UPDATE</button>
+    </form>
+</body>
+</html>
